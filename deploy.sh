@@ -54,6 +54,13 @@ fi
 export PATH="/home/ubuntu/miniconda/bin:$PATH"
 source /home/ubuntu/miniconda/bin/activate
 
+# Update and install Nginx if not already installed
+if ! command -v nginx > /dev/null; then
+    echo "Installing Nginx"
+    sudo apt-get update
+    sudo apt-get install -y nginx
+fi
+
 # Nginx 설정
 echo "Configuring Nginx..."
 sudo bash -c 'cat > /etc/nginx/sites-available/myapp <<EOF
@@ -97,13 +104,6 @@ source /home/ubuntu/miniconda/bin/activate fastapi-env
 # 의존성 설치
 echo "Installing dependencies..."
 pip install -r requirements.txt
-
-# Update and install Nginx if not already installed
-if ! command -v nginx > /dev/null; then
-    echo "Installing Nginx"
-    sudo apt-get update
-    sudo apt-get install -y nginx
-fi
 
 # Nginx 설정 테스트 및 재시작
 echo "Testing and restarting Nginx..."
