@@ -11,6 +11,8 @@ load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
 
+# test
+
 # LLM 구성
 openai_llm = ChatOpenAI(
   model="gpt-3.5-turbo",
