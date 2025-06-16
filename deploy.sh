@@ -25,10 +25,12 @@ else
     cat << EOF > .env
 OPENAI_API_KEY=${OPENAI_API_KEY}
 TAVILY_API_KEY=${TAVILY_API_KEY}
-EOF # 환경 변수 설정
+EOF
+# 환경 변수 설정
     sudo chown ubuntu:ubuntu .env
     echo "New .env file created"
-fi # .env 파일 생성
+fi
+# .env 파일 생성
 
 # .env 파일 확인
 echo "Checking .env file..."
