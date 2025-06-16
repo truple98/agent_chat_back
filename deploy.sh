@@ -22,7 +22,7 @@ elif [ -f .env ]; then
     echo ".env file already exists"
 else
     # .env 파일 생성 (필요한 환경 변수 설정)
-cat << EOF > .env
+    cat << EOF > .env
 OPENAI_API_KEY=${OPENAI_API_KEY}
 TAVILY_API_KEY=${TAVILY_API_KEY}
 EOF
