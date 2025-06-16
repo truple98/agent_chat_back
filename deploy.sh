@@ -31,7 +31,7 @@ EOF
 fi
 
 # .env 파일 확인
-echo "Checking .env file..."
+echo "Checking .env file.."
 if [ -f .env ]; then
     echo ".env file exists"
     ls -la .env
